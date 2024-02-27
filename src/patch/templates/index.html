@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        {% load static %}
+		<meta charset="UTF-8">
+		<title>We Can Pay Your Landlord Deposit | Patch</title>
+		<link rel="stylesheet" href="{% static '/css/style.css' %}" type="text/css" />
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta property="og:image" content="" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+	</head>
+	<body>
+		<header>
+			<section class="wrapper">
+				<div class="left">
+					<h1><a href="index.html"><img src="{% static '/images/logo.png' %}" alt="logo"></a></h1>
+					<ul>
+						<li><a href="#">For Rents</a></li>
+						<li><a href="#">Serch Properties</a></li>
+						<li><a href="#">More</a></li>
+					</ul>
+				</div>
+				<div class="right">
+					<ul>
+						<li><a href="#">For Agent/Landlords</a></li>
+						<li><a href="#">Sign In</a></li>
+					</ul>
+				</div>
+			</section>
+		</header>
+
+		<section id="home">
+			<section class="wrapper">
+				<h1>Welcome to modern <br> renting with Patch</h1>
+				<p>Improve your Credit History. Rent your Deposite. <br> Find your Perfect Pad.</p>
+				<a href="#">join Patch</a>
+				<p class="two">built for you in partnership with <img src="{% static '/images/experian.svg' %}" alt="experian"></p>
+			</section>
+		</section>
+		<section id="service">
+			<section class="wrapper">
+				<div class="top">
+					<div>
+						<img src="{% static '/images/more.svg' %}" alt="more">
+					</div>
+						<p>WHAT IS PATCH</p>
+						<h1>game changing services <br> for tents to make <br> rating easier</h1>
+				</div>
+				<div class="bottom">
+					{% for service in services %}
+					<div class="card">
+						<h3><span>patch</span> {{service.title}}</h3>
+						<p>{{service.discription}}</p>
+						<a href="#">Learn More</a>
+					</div>
+					{% endfor %}
+					<div class="line">
+					</div>
+				</div>
+			</section>
+		</section>
+		<section id="testimonials">
+			<section class="wrapper">
+				<div class="top">
+					<div class="image">	
+						{% for contact in contacts %}
+						<div class="img"><img src="{{contact.image.url}}" alt="img"></div>
+						{% endfor %}
+					</div>
+					<h1>Friends in official places</h1>
+					<p>Patch has been built in consultation with the government- <br> backed deposit schemes to build the best renting <br> experience for tenants, agents, and landlords.</p>
+					<div class="line"></div>
+				</div>
+				<div class="middle">
+					<p>"Patch is the one of the best way to <br> improve your credit history and it's <br> completely free."</p>
+					<div class="img"><img src="{% static '/images/testimonial-1.jpg' %}" alt="img"></div>
+					<h3>Jeramy B</h3>
+					<span>Bath,BA2</span>
+					<div class="line"></div>
+				</div>
+				<div class="bottom">
+					<div class="image">
+						<img src="{% static '/images/100k.png' %}" alt="img">
+					</div>
+					<p>Join more than 100,000 renters alredy using patch</p>
+					<a href="#">Join Now</a>
+				</div>
+			</section>
+		</section>
+		<section id="faq">
+			<section class="wrapper">
+				<div class="top">
+					<div class="no"></div>
+					<div class="heading">Frequently Asked <br>Questions</div>
+					<div class="h">
+						{% for faqcategory in faqcategorys %}
+						<h1><a href="#"></a>{{faqcategory.title}}</h1>
+						{% endfor %}
+					</div>
+					<div class="lines">
+						<div class="lineone"></div>
+						<div class="linetwo"></div>
+				    </div>
+				</div>
+				<div class="middle">
+					{% for friend in friends %}
+					<div class="card">
+						<h1>{{friend.title}}</h1>
+						<p>{{friend.discription}}</p>
+					</div>
+				    {% endfor %}
+				</div>
+				<div class="bottom">
+					<div class="one"><img src="{% static '/images/index-faq-links-2.png' %}" alt="image"></div>
+					<div class="two">
+						<img src="{% static '/images/message-bouble.svg' %}" alt="image">
+						<p>See more FAQs</p>
+					</div>
+					<div class="three">
+						<img src="{% static '/images/mail-checked.svg' %}" alt="image">
+						<p>Need to get in touch? reach us at <br><a href="#">costemerservice@patchproperty.com</a></p>
+					</div>
+				</div>
+			</section>
+		</section>
+		<section id="company">
+			<section class="wrapper">
+				<h3>As seen in...</h3>
+				<div class="list">
+					<ul>
+						{% for brand in brands %}
+						<li>
+							<img src="{{brand.image.url}}" alt="image">
+							<p>The Daily Mail</p>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</section>
+		</section>
+		<section id="benefits">
+			<section class="wrapper">
+				<div class="no"></div>
+				<div class="top">
+					<h1>Join more than <br>100,000 renters <br>using patch</h1>
+					<a href="#">Sign Up</a>
+				</div>
+				<div class="bottom">
+					<ul>
+						<li>
+							<img src="{% static '/images/check.svg' %}" alt="check">
+							<p>tracking your rent is 100% free</p>
+						</li>
+						<li>
+							<img src="{% static '/images/check.svg' %}" alt="check">
+							<p>Build your Experian Credit History</p>
+						</li>
+						<li>
+							<img src="{% static '/images/check.svg' %}" alt="check">
+							<p>Benefit from other great patch services</p>
+						</li>
+						<li>
+							<img src="{% static '/images/check.svg' %}" alt="check">
+							<p>signing up takes less than 3 minutes</p>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</section>
+		<footer>
+			<section class="wrapper">
+				<div class="no"></div>
+				<div class="top">
+					<div class="items">
+						<img src="{% static '/images/logo-white.png' %}" alt="img">
+						<p>Welcome to modern renting</p>
+					</div>
+					<div class="items">
+						<h3>Services</h3>
+						<ul>
+							<li><a href="#">Rent Tracking</a></li>
+							<li><a href="#">New Deposit</a></li>
+							<li><a href="#">Existing Deposit</a></li>
+							<li><a href="#">Search Properties</a></li>
+							<li><a href="#">FAQs</a></li>
+						</ul>
+					</div>
+					<div class="items">
+						<h3>About Us</h3>
+						<ul>
+							<li><a href="#">Our Story</a></li>
+							<li><a href="#">Meet the Team</a></li>
+							<li><a href="#">Careers</a></li>
+						</ul>
+					</div>
+					<div class="items">
+						<h3>Stay up to date</h3>
+						<p>Subscribe to our news letter</p>
+						<form>
+							<input type="text" placeholder="Your email address">
+							<img src="{% static '/images/send.svg' %}" alt="img">
+						</form>
+					</div>
+				</div>
+				<div class="bottom">
+					<div class="left">
+						<p>2019 Patch Property-All rights - <a href="#">Praivacy Policy</a><br>v1.16</p>
+					</div>
+					<div class="right">
+						<div class="img"><img src="{% static '/images/facebook.svg' %}" alt="#"></div>
+						<div class="img"><img src="{% static '/images/twitter.svg' %}" alt="#"></div>
+					</div>
+				</div>
+			</section>
+		</footer>
+	</body>
+</html>
+	</body>
+</html>
